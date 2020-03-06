@@ -1,0 +1,30 @@
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-4qc8g[0m
+{"level":"warn","ts":1583453730.7144232,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583453730.7150028,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-pgfrr[0m
+{"level":"warn","ts":1583453731.6542406,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583453731.6570945,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-andymotta-wriked-master-2q7jf-4z4lz[0m
+{"level":"warn","ts":1583453740.6879895,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583453741.036899,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/wriked.git @ v0.1.1 in path /workspace/source"}
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e9fef5a1819ab70cad9d473c96e8bf15ad28e65f
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mandymotta-wriked-master-2q7jf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/wriked main.go
+main.go:12:2: cannot find package "github.com/360EntSecGroup-Skylar/excelize" in any of:
+	/usr/local/go/src/github.com/360EntSecGroup-Skylar/excelize (from $GOROOT)
+	/home/jenkins/go/src/github.com/360EntSecGroup-Skylar/excelize (from $GOPATH)
+make: *** [build] Error 1
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-make-build'. The execution of the pipeline has stopped.[0m
